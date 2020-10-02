@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #02090c;
+  font-family: 'Gugi' , cursive;
+}
+
+h3 {
+  position: absolute;
+  bottom: 15%;
+  text-align: center;
+  color: #fff;
+}
+
+a {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  text-decoration: none;
+  color: crimson;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+a:hover {
+    color: #fff;
+}
+
+img {
+  width: 60%;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#6ab9ff, #0090d2);
+  border-radius: 50%;
+  border: 10px solid #fff;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8),
+    0 20px 100px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.plane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: plane 1s linear infinite;
+}
+
+.plane img {
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes plane {
+  0% {
+    transform: translate(2px, 2px);
+  }
+  50% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+
+/* Clouds  */
+
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.cloud img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  width: 30%;
+  animation: cloud 1s linear infinite;
+  z-index: 1;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(400px);
+  }
+  200%,
+  100% {
+    transform: translateX(-400px);
+  }
+}
+
+.cloud img:nth-child(1) {
+  top: 50px;
+  animation-delay: -2s;
+  animation: cloud 1.25s linear infinite;
+  z-index: 2;
+}
+
+.cloud img:nth-child(2) {
+  top: 180px;
+  animation-delay: -1s;
+  animation: cloud 1s linear infinite;
+  z-index: 2;
+}
+
+.cloud img:nth-child(3) {
+  top: 100px;
+  animation-delay: -2.5s;
+  animation: cloud 0.75s linear infinite;
+  z-index: 2;
+}
